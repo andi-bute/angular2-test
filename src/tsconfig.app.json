@@ -11,9 +11,6 @@
     ],
     "outDir": "../out-tsc/app",
     "target": "es5",
-    "typeRoots": [
-      "../node_modules/@types"
-    ]
     "module": "es2015",
     "baseUrl": "",
     "types": []

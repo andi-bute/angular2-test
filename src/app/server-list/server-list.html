@@ -1,0 +1,71 @@
+
+<div class="filters">
+    <tabset>
+      <tab heading='RAM'>
+        <div class="row space-vertical">
+          <label *ngFor="let ramSize of ramSizes" class="checkbox-inline">
+            <input type="checkbox" value="{{ramSize.value}}" [(ngModel)]="ramSize.checked" (change)="updateRamSizes($event)"> {{ramSize.display}}
+          </label>
+        </div>
+      </tab>
+      <tab heading='Harddisk Type'>
+        <div class="row space-vertical">
+          <div class="col-md-4">
+            <select class="form-control" [(ngModel)]="filters.hddType" (change)="updateHddType($event)">
+              <option *ngFor="let harddiskType of harddiskTypes" value="{{harddiskType.value}}">{{harddiskType.display}}</option>
+            </select>
+          </div>
+        </div>
+      </tab>
+      <tab heading='Harddisk Size'>
+        <div class="row space-vertical">
+          <div class="col-md-6">
+            <p-slider [(ngModel)]="filters.hddSize" [min]="0" [max]="100" step="5" [range]="true" (onChange)="updateHddSize($event)"></p-slider>
+          </div>
+          <div class="col-md-6">
+            <a href="#">Min: <span class="badge">{{hddSizeSelected.min}}</span></a>
+            <a href="#">Max: <span class="badge">{{hddSizeSelected.max}}</span></a>
+          </div>
+        </div>
+      </tab>
+    </tabset>
+</div>
+<hr/>
+<table class="table table-striped table-condensed">
+  <tr>
+    <th>Server Name</th>
+    <th>Processor</th>
+    <th>RAM</th>
+    <th>Storage</th>
+    <th>Price</th>
+    <th>RAM (GB)</th>
+    <th>Storage (GB)</th>
+    <th>Harddisk Type</th>
+  </tr>
+  <tr *ngFor="let server of filteredServers">
+    <td>
+      {{server.ServerName}}
+    </td>
+    <td>
+      {{server.Processor}}
+    </td>
+    <td>
+      {{server.RAM}}
+    </td>
+    <td>
+      {{server.Storage}}
+    </td>
+    <td>
+      {{server.Price}}
+    </td>
+    <td>
+      {{server.RAM_GB}}
+    </td>
+    <td>
+      {{server.Storage_GB}}
+    </td>
+    <td>
+      {{server.HarddiskType}}
+    </td>
+  </tr>
+</table>

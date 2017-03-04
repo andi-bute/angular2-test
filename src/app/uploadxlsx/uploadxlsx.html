@@ -1,0 +1,12 @@
+<form>
+  <div class="form-group">
+    <label for="upload">Upload a xlsx file</label>
+    <input type="file" id="upload" class="form-control" (change)="fileChange($event)">
+  </div>
+</form>
+
+
+
+<div *ngIf="uploadedXls && (uploadedXls.result === 'success')">
+  <server-list [xlsx]="uploadedXls"></server-list>
+</div>
