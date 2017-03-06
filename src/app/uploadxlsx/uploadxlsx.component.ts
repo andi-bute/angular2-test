@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Output, ElementRef, EventEm
 import {utils, read, IWorkBook} from "ts-xlsx";
 import {IWorkSheet} from "xlsx";
 import {Observable, Subject, Subscription} from "rxjs";
-import {FileUploader} from "ng2-file-upload/ng2-file-upload";
 
 export interface UploadResult {
   result: "failure" | "success";
