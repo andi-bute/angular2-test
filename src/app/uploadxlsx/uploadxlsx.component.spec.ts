@@ -3,28 +3,40 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { UploadTestComponent } from './uploadxlsx.component';
+import { UploadXlsxComponent } from './uploadxlsx.component';
+import { ServerListComponent } from '../server-list/server-list.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TabsModule } from 'ng2-bootstrap';
+import {SliderModule} from 'primeng/primeng';
 
-describe('UploadTestComponent', () => {
-  let component: UploadTestComponent;
-  let fixture: ComponentFixture<UploadTestComponent>;
+describe('UploadXlsxComponent', () => {
+  let component: UploadXlsxComponent;
+  let fixture: ComponentFixture<UploadXlsxComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UploadTestComponent ]
+      declarations: [
+        UploadXlsxComponent,
+        ServerListComponent
+      ],
+      imports: [
+        FormsModule,
+        TabsModule,
+        SliderModule
+      ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UploadTestComponent);
+    fixture = TestBed.createComponent(UploadXlsxComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create component', () => {
     expect(component).toBeTruthy();
   });
 
-  //TODO: Need to figure out end-to-end testing and manage to upload a file
+  //TODO: Need to figure out end-to-end testing and manage to upload a file, or stub uploading
 });

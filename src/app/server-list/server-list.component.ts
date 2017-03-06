@@ -45,10 +45,6 @@ export class ServerListComponent {
   public hddSizesFilter = [0, 250, 500, 1000, 2000, 3000, 4000, 8000, 12000, 24000, 48000, 72000];
   public hddSizeSelected = {min:"0", max: "72TB"}
   constructor(private ref: ChangeDetectorRef) {
-    if(this.xlsx && this.xlsx.result === "success") {
-        this.filteredServers = this.xlsx.payload;
-    }
-
   }
   ngOnInit() {
     this.filterResults();
@@ -70,13 +66,9 @@ export class ServerListComponent {
     let result = this.convertPercentageToHddSize(this.filters.hddSize);
     this.hddSizeSelected.min = result.display.min;
     this.hddSizeSelected.max = result.display.max;
-    //a.splice(a.indexOf(4),a.indexOf(16)-a.indexOf(4)+1)
     let spliceStart = this.hddSizesFilter.indexOf(result.filter.min);
     let spliceEnd = this.hddSizesFilter.indexOf(result.filter.max)-this.hddSizesFilter.indexOf(result.filter.min)+1;
     let spliceable = _.clone(this.hddSizesFilter)
-    console.log("spliceStart", spliceStart);
-    console.log("spliceEnd", spliceEnd);
-    console.log("this.hddSizesFilter", this.hddSizesFilter);
     this.filters.hddSizeFilter = spliceable.splice(spliceStart, spliceEnd);
     this.filterResults();
   }
@@ -131,6 +123,5 @@ export class ServerListComponent {
       }
 
     });
-    console.log(this.filters);
   }
 }

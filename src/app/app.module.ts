@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import {Ng2BootstrapModule} from 'ng2-bootstrap';
 import { TabsModule } from 'ng2-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {SliderModule} from 'primeng/primeng';
@@ -16,6 +17,7 @@ import { ServerListComponent } from './server-list/server-list.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    Ng2BootstrapModule.forRoot(),
     TabsModule.forRoot(),
     ReactiveFormsModule,
     SliderModule

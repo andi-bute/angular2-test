@@ -3,6 +3,9 @@ import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { UploadXlsxComponent } from './uploadxlsx/uploadxlsx.component';
 import { ServerListComponent } from './server-list/server-list.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TabsModule } from 'ng2-bootstrap';
+import {SliderModule} from 'primeng/primeng';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -12,12 +15,16 @@ describe('AppComponent', () => {
         UploadXlsxComponent,
         ServerListComponent
       ],
+      imports: [
+        FormsModule,
+        TabsModule,
+        SliderModule
+      ]
     }).compileComponents();
   }));
 
   it('should create the app', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
-    console.log(fixture);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
