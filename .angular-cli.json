@@ -21,7 +21,8 @@
       "styles": [
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
         "../node_modules/primeng/resources/primeng.css",
-        "styles.css"
+        "styles.css",
+        "slider-theme.css"
       ],
       "scripts": [
         "../node_modules/underscore/underscore-min.js"
